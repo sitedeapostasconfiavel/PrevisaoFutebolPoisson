@@ -33,5 +33,8 @@ Para utilizar este script, é necessário definir as médias de gols para as equ
 
 Este processo fornece uma visão quantitativa sobre as possíveis saídas do jogo, permitindo análises mais fundamentadas, seja para apostas esportivas, estratégias de torneios, ou simplesmente para um entendimento mais aprofundado das dinâmicas do futebol.
 
+## Mais Informações
+Para mais insights, dicas de apostas e análises aprofundadas, visite nosso site: [Site de Apostas Confiável](https://sitedeapostasconfiavel.com/).
+
 ## Contribuições
 Encorajamos a comunidade a contribuir com este projeto, seja aprimorando o algoritmo, expandindo a base de dados para análises mais robustas ou refinando a interface de usuário para facilitar a interação com o script. Suas ideias e contribuições são valiosas para evoluir esta ferramenta analítica.
