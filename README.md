@@ -28,6 +28,13 @@ Enquanto o modelo baseado na distribuição de Poisson fornece uma base sólida 
 
 Portanto, embora este script ofereça uma ferramenta poderosa para análise preditiva, seu uso mais eficaz é como um complemento para uma avaliação mais abrangente de cada partida.
 
+## Nota sobre as Probabilidades
+Você pode notar que, em algumas ocasiões, a soma das probabilidades de vitória da equipe da casa, empate e vitória da equipe visitante não totaliza exatamente 100%. Isso ocorre devido ao método de cálculo utilizado e à natureza das distribuições de probabilidade aplicadas.
+
+Nossa modelagem se concentra nos resultados mais prováveis, limitando a análise a um número específico de gols (por exemplo, de 0 a 5 gols para cada equipe). Resultados com uma grande quantidade de gols são menos prováveis e, portanto, muitas vezes excluídos do cálculo direto. Além disso, o processo de arredondamento dos valores percentuais para um número limitado de casas decimais pode também contribuir para pequenas discrepâncias na soma total.
+
+É importante entender que estas pequenas variações não afetam significativamente a utilidade das probabilidades calculadas para fins de previsão e análise. O objetivo deste modelo é fornecer uma estimativa informada e estratégica que ajude a orientar decisões baseadas em probabilidades relativas, e não uma previsão absoluta de resultados de partidas.
+
 ## Como Usar
 Para utilizar este script, é necessário definir as médias de gols para as equipes da casa e visitante. Essas médias podem ser baseadas em dados históricos de desempenho das equipes em temporadas anteriores ou em uma sequência de jogos recentes. Após inserir esses valores, o script aplica a distribuição de Poisson para calcular e exibir as probabilidades de diferentes resultados para a partida especificada.
 
