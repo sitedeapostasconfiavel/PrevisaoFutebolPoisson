@@ -1,0 +1,36 @@
+import numpy as np
+from scipy.stats import poisson
+
+
+def prever_resultados(med_gols_casa, med_gols_fora):
+    max_gols = 5
+    # Calcula a probabilidade de cada resultado possível até um número máximo de gols
+    prob_casa = [poisson.pmf(i, med_gols_casa) for i in range(0, max_gols + 1)]
+    prob_fora = [poisson.pmf(i, med_gols_fora) for i in range(0, max_gols + 1)]
+
+    prob_vitoria_casa = 0
+    prob_empate = 0
+    prob_vitoria_fora = 0
+
+    # Calcula as probabilidades de vitória da casa, empate e vitória de fora
+    for i in range(0, max_gols + 1):
+        for j in range(0, max_gols + 1):
+            if i > j:
+                prob_vitoria_casa += prob_casa[i] * prob_fora[j]
+            elif i == j:
+                prob_empate += prob_casa[i] * prob_fora[j]
+            else:
+                prob_vitoria_fora += prob_casa[i] * prob_fora[j]
+
+    return prob_vitoria_casa, prob_empate, prob_vitoria_fora
+
+
+if __name__ == "__main__":
+    med_gols_casa = float(input("Insira a média de gols para a equipe da casa: "))
+    med_gols_fora = float(input("Insira a média de gols para a equipe visitante: "))
+
+    prob_vitoria_casa, prob_empate, prob_vitoria_fora = prever_resultados(med_gols_casa, med_gols_fora)
+
+    print(f"\nProbabilidade de vitória da equipe da casa: {prob_vitoria_casa:.2%}")
+    print(f"Probabilidade de empate: {prob_empate:.2%}")
+    print(f"Probabilidade de vitória da equipe visitante: {prob_vitoria_fora:.2%}")
